@@ -48,3 +48,8 @@ h1.title {
 .projectTile a:active {
   background: lightgray;
 }
+
+.projectTile a:visited {
+  background: #EEE;
+  border-color: purple;
+}
