@@ -56,11 +56,11 @@ a.projectTile:visited {
 }
 
 a.projectTile p:nth-child(2) {
-  font-size: smaller;
   color: gray;
 }
 
 a.projectTile p:first-child {
+  font-size: larger;
   font-weight: bold;
 }
 
