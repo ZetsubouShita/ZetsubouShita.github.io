@@ -1,0 +1,50 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(#FFF, #CCCCD4);
+  
+}
+
+h1.title {
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 0px;
+  font-family: 'EncodeSansThin', sans-serif;
+  font-size: 7vw;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 0px;
+  font-family: 'EncodeSansThin', sans-serif;
+  font-size: 3vw;
+}
+
+.projects {
+  margin-top: 100px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projectTile {
+  display: inline-block;
+  margin: 25px;
+}
+
+.projectTile a {
+  background: white;
+  border-color: blue;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 15px;
+  padding: 50px;
+  height: auto;
+  font-family: sans-serif;
+}
+
+.projectTile a:active {
+  background: lightgray;
+}
