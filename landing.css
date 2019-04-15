@@ -64,7 +64,7 @@ a.projectTile p:first-child {
   font-weight: bold;
 }
 
-/*special case*/
-a.projectTile:nth-child(3) {
+a.disabled {
   color: black;
+  border-color: black;
 }
