@@ -34,26 +34,37 @@ h1.title {
   margin-right: auto;
 }
 
-.projectTile {
+a.projectTile {
   display: inline-block;
   margin: 25px;
-}
-
-.projectTile a {
+  padding: 10px;
   background: white;
   border-color: blue;
   border-width: 1px;
   border-style: solid;
   border-radius: 15px;
-  padding: 50px;
-  height: auto;
   font-family: sans-serif;
+  text-decoration: none;
 }
 
-.projectTile a:active {
+a.projectTile:active {
   background: lightgray;
 }
 
-.projectTile a:visited {
+a.projectTile:visited {
   border-color: purple;
+}
+
+a.projectTile p:nth-child(2) {
+  font-size: smaller;
+  color: gray;
+}
+
+a.projectTile p:first-child {
+  font-weight: bold;
+}
+
+/*special case*/
+a.projectTile:nth-child(3) {
+  color: black;
 }
