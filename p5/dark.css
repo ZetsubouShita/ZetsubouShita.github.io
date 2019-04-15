@@ -1,0 +1,37 @@
+/* Created 3/04/2019 by Chandler Gerstenslager - Added basic css styling for calculator
+   Modified 3/5/2019 by Ryan Williamson - Themed the calculator background
+*/
+
+body {
+  background-color: rgb(67, 67, 67);
+}
+
+.calculator {
+  background-color: rgb(28,28,28);
+}
+
+.calc-display {
+  background-color: #333;
+}
+
+.calc-display p {
+  color: #FFF;
+}
+
+.button {
+  color: #fff;
+  background-color: #62757f;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+  background-color: rgb(58,143,183);
+}
+
+.button:active, .keypressed {
+  background-color: rgb(58,143,183);
+  box-shadow: 0 5px #666;
+}
+.changeTheme {
+  color: #DDD;
+}

@@ -1,0 +1,114 @@
+/*
+  Created 2/24/19 by Chandler Gerstenslager
+  This is the CSS for the publications page
+  The beauty of this CSS is that when the width of the pub. page is <= 1180px,
+  the 3 columns turn into rows to look nice on mobile view
+  Modified 2/26/19 Jason Clemens changed appearance of publication tiles.
+  Modified 2/26/19 Chandler added more CSS changes
+*/
+.container {
+  margin-bottom: 20px; }
+
+/* Container that holds all the columns in the page
+  An inline-block element is placed as an inline element, but it behaves as a block element.
+ */
+.column-container {
+  display: inline-block;
+  margin-left: 1%;
+  margin-right: 1%;
+  text-align: center; }
+
+/* Center aligns the header and subheader of pub page*/
+.pub-header, .pub-subheader {
+  text-align: center; }
+
+.pub-subheader {
+  margin-bottom: 30px; }
+
+/* Create three equal columns that floats next to each other
+  This is the CSS for each block representing a publication
+*/
+.pub-column {
+  width: 30%;
+  padding: 10px;
+  height: 345px;
+  border-style: solid;
+  border-color: #777;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#B00), to(#A00));
+  background-image: linear-gradient(#B00, #A00);
+  color: #fff;
+  margin-bottom: 20px !important;
+  /* Forces the bottom margin to be a consistent 20 px*/ }
+
+/* Forces every column in the first position to float left */
+.pub-column:nth-child(3n+1) {
+  float: left; }
+
+/* Forces every column in third position to float right */
+.pub-column:nth-child(3n+3) {
+  float: right; }
+
+/* This forces middle column to be centered on page */
+.pub-column:nth-child(3n+2) {
+  display: inline-block; }
+
+/* The actual text within the content block has a 5px padding around container box*/
+.pub-content {
+  padding: 5px;
+  height: 100%; }
+
+/* Italicises the names of the authors */
+.pub-authors {
+  font-style: italic;
+  margin-bottom: 5px;
+  font-weight: 500; }
+
+/* The source is the journal or where the content was created for
+  The margin keeps the source space away from link and authors
+*/
+.pub-source {
+  font-weight: 500;
+  margin: 10px 0px; }
+
+/* Keeps the icon only 30x30px in dimension and gives margin on top and bottom*/
+.pub-link-icon {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  margin: 20px auto; }
+
+/* This is for the top link in the instructions,
+  even smaller at 20px by 20px and it has left and right padding to fit in sentence
+*/
+.pub-link-icon-header {
+  width: 20px;
+  height: 20px;
+  padding: 0 5px; }
+
+/* Whatever content have this class gets centered */
+.center {
+  margin: 0 auto;
+  display: flex; }
+
+.filler-column {
+  background-image: none;
+  border-color: transparent; }
+
+/* When the width is <= 1180px, these new CSS properties override the ones up top
+These CSS properties make the blocks turn into individual rows, and is helpful for mobile view
+If this were not the case, the 3 blocks would look very bad on devices with smaller widths
+ */
+@media only screen and (max-width: 1180px) {
+  .pub-column {
+    width: 100%;
+    /* Make the column a row*/
+    padding: 0px;
+    height: auto !important;
+    /*Allows height to be auto according to the height of its contents*/
+    float: none !important;
+    /* Gets rid of all float properties */ }
+  h2 {
+    margin: 6px; }
+  /* Aligns all content, especially text, centered within the pub-content container*/
+  .pub-content {
+    text-align: center; } }

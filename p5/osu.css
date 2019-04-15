@@ -1,0 +1,43 @@
+/*Created 3/20/2019 by Sean Edwards - OSU themed CSS that maintains uniform style of other CSS themes for calculator.*/
+
+/*Background of whole page.*/
+body {
+  background-color: #D3D3D3;
+}
+
+/*Calculator background.*/
+.calculator {
+  background-color: #FF0000;
+}
+
+/*Calculator display output background.*/
+.calc-display {
+  background-color: #FFFFFF;
+}
+
+/*Color of text within display output background.*/
+.calc-display p {
+  color: #228B22;
+}
+
+/*Button color.*/
+.button {
+  color: #fff;
+  background-color: #778899;
+  box-shadow: 0 9px #696969;
+}
+
+/*Button color on hover.*/
+.button:hover {
+  background-color: #2F4F4F;
+}
+
+/*Button color when pressed.*/
+.button:active, .keypressed{
+  background-color: #000000;
+  box-shadow: 0 5px #666;
+}
+
+.changeTheme {
+  color: #000;
+}

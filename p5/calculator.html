@@ -1,0 +1,192 @@
+<!--Created 3/04/2019 by Chandler Gerstenslager - Added basic table elements for calculator-->
+<!--Modifed 3/5/2019 by Ryan Williamson - Wired all the number buttoms up -->
+<!--Modified 3/5/2019 by Sean Edwards - Added some formatted button placeholders-->
+<!--Modified 3/20/2019 by Chandler Gerstenslager - added further modal features, download button-->
+<!--Modified 3/21/2019 by Jianyi Qian - added binary conversion page-->
+<!--Modified 3/21/2019 by Jason Clemens - Validated HTML -->
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<title>AZND Calculator</title>
+	<link rel="stylesheet" type="text/css" href="base.css" />
+	<link id="colors" rel="stylesheet" type="text/css" href="light.css" />
+	<link rel="stylesheet" href="modal-style.css" />
+	<link rel="stylesheet" href="binary-style.css" />
+	<script type="text/javascript" src="controller.js"></script>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<div class="changeTheme">
+		Choose a theme
+		<select id="themeSelect">
+			<option value="light.css">Light</option>
+			<option value="dark.css">Dark</option>
+			<option value="osu.css">OSU</option>
+		</select>
+	</div>
+	<div class="buttons-container">
+		<button id="modal-btn" class="modal-button">Calculation History</button>
+		<button id="binary-btn" class="binary-button">Binary Coversion</button>
+	</div>
+	<div id="modal-container">
+		<div id="my-modal" class="modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Previous 10 Calculations</h2>
+				</div>
+				<div class="modal-body">
+					<table class="modal-table">
+					  <tr class="modal-tr">
+					  	<td class="modal-td">No calculations have been entered.</td>
+					  </tr>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<h3>
+						<button class="download-button" onclick="download()">Download Calculations</button>
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="modal-controller.js"></script>
+
+
+	<div class="calculator">
+		<img id="aznd-logo" src="img/aznd-calc-logo-white.png" alt="Italian Trulli">
+		<div class="calc-display">
+			<p id="view">
+				0
+			</p>
+		</div>
+		<div class="table-container">
+			<table class="buttons">
+				<tbody>
+				  <tr>
+				    <td><button class="button" id="mc">MC</button></td>
+				    <td><button class="button" id="ms">MS</button></td>
+				    <td><button class="button" id="mr">MR</button></td>
+				    <td><button class="button" id="mp">M+</button></td>
+				  </tr>
+					<tr>
+						<td><button class="button" id="clear">AC</button></td>
+						<td><button class="button" id="ee">EE</button></td>
+						<td><button class="button" id="modulo">%</button></td>
+						<!-- Divide symbol -->
+						<td><button class="button" id="division">&#247;</button></td>
+					</tr>
+					<tr>
+						<td><button class="button" id="seven">7</button></td>
+						<td><button class="button" id="eight">8</button></td>
+						<td><button class="button" id="nine">9</button></td>
+						<!-- Multiplication Symbol -->
+						<td><button class="button" id="multiplication">&#215;</button></td>
+					</tr>
+					<tr>
+						<td><button class="button" id="four">4</button></td>
+						<td><button class="button" id="five">5</button></td>
+						<td><button class="button" id="six">6</button></td>
+						<td><button class="button" id="subtraction">-</button></td>
+					</tr>
+					<tr>
+						<td><button class="button" id="one">1</button></td>
+						<td><button class="button" id="two">2</button></td>
+						<td><button class="button" id="three">3</button></td>
+						<td><button class="button" id="addition">+ </button> </td>
+					</tr>
+					<tr>
+						<td><button class="button" id="zero">0</button></td>
+						<td><button class="button" id="dot">.</button></td>
+						<td><button class="button" id="negate">+/-</button></td>
+						<td><button class="button" id="equal">=</button></td>
+					</tr>
+					<!--Added by Sean Edwards 3/5/2019-->
+					<!--More added by Sean Edwards 3/11/2019-->
+					<tr>
+						<td><button class="button" id="square">x<sup>2</sup></button></td>
+						<td><button class="button" id="cube">x<sup>3</sup></button></td>
+						<td><button class="button" id="xtoy">x<sup>y</sup></button></td>
+						<td><button class="button" id="e_power">e<sup>x</sup></button></td>
+					</tr>
+					<tr>
+						<td><button class="button" id="powerten">10<sup>x</sup></button></td>
+						<td><button class="button" id="recip">1&frasl;<sub>x</sub></button></td>
+						<td><button class="button" id="sqrt"><sup>2</sup>&radic;x</button></td>
+						<td><button class="button" id="cubrt"><sup>3</sup>&radic;x</button></td>
+					</tr>
+					<tr>
+						<td><button class="button" id="nroot"><sup>y</sup>&radic;x</button></td>
+						<td><button class="button" id="natlog">ln</button></td>
+						<td><button class="button" id="logten">log<sub>10</sub></button></td>
+						<td><button class="button" id="e">e</button></td>
+					</tr>
+					<tr>
+						<td><button class="button" id="factorial">!</button></td>
+						<td><button class="button" id="sin">sin</button></td>
+						<td><button class="button" id="cos">cos</button></td>
+						<td><button class="button" id="tan">tan</button></td>
+					</tr>
+					<tr>
+						<td><button class="button" id="pi">&pi;</button></td>
+						<td><button class="button" id="invsin">sin<sup>-1</sup></button></td>
+						<td><button class="button" id="invcos">cos<sup>-1</sup></button></td>
+						<td><button class="button" id="invtan">tan<sup>-1</sup></button></td>
+					</tr>
+		    </tbody>
+		  </table>
+	  </div>
+	</div>
+	<div id="binary-container">
+			<div id="my-binary" class="binary">
+				<div class="binary-content">
+					<div class="binary-header">
+						<span class="binary-close">&times;</span>
+						<h2>Binary Convertor</h2>
+					</div>
+					<div class="binary-body">
+						<div class="binary-convertor">
+						  <table>
+						    <tr>
+							    <td>Binary: </td>
+							    <td><p id= "binarynum" class="convertor"/></td>
+							    <td><sub>2</sub></td>
+						    </tr>
+						    <tr>
+							    <td>Octal</td>
+							    <td><p id ="octalnum" class="convertor"/></td>
+							    <td><sub>8</sub></td>
+						    </tr>
+						    <tr>
+							    <td>Decimal</td>
+							    <td><p id="decimalnum" class="convertor"/></td>
+							    <td><sub>10</sub></td>
+						    </tr>
+						    <tr>
+							    <td>Hexadecimal</td>
+							    <td><p id="hexnum" class="convertor"/></td>
+							    <td><sub>16</sub></td>
+						    </tr>
+						  </table>
+						</div>
+						<div id = "convert-box">
+						  <table>
+							  <tr>
+								  <td><button id = "convertbtn" class="binary-button">convert</button></td>
+							  </tr>
+							</table>
+							</div>
+					</div>
+
+					<div class="binary-footer">
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="binaryconv-controller.js"></script>
+</body>
+
+</html>

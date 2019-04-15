@@ -1,0 +1,130 @@
+/*
+Created and Modified by Jianyi Qian - 3/20/2018
+*/
+
+:root {
+  --binary-duration: 1s;
+  --binary-color: #428bca;
+}
+
+#binary-container {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f4f4;
+  font-size: 17px;
+  line-height: 1.6;
+  display: contents;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.binary {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.binary-button {
+  background: #428bca;
+  padding: 1em 2em;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.binary-button:hover {
+  background: #3876ac;
+}
+
+.binary-content {
+  margin: 10% auto;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: binaryopen;
+  animation-duration: var(--binary-duration);
+}
+
+.binary-header h2,
+.binary-footer h3 {
+  margin: 0;
+}
+
+.binary-header {
+  background: var(--binary-color);
+  padding: 15px;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.binary-body {
+  /* padding: 10px 20px; */
+  background: #fff;
+  min-height: 400px;
+}
+
+.binary-footer {
+  background: var(--binary-color);
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.binary-close {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+}
+
+.binary-close:hover,
+.binary-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes binaryopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+.convertor{
+    width: 95%;
+    /*padding: 12px 20px 20px 20px;*/
+    min-height: 30px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+.binary-convertor{
+    padding: 20px;
+}
+
+#convertbtn{
+    padding: 12px, 20px, 20px,20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#convert-box{
+
+   width: 95%;
+}

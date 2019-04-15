@@ -1,0 +1,173 @@
+/*
+ Modified 2/25/19 Jason Clemens Changed header and various content stylings.
+ Modifed 2/26/19 Ryan Williamson Changed header tags to work with new layout and added people themings
+ Modifed 2/27/19 Ryan Williamson Fixed a bunch of adaptive layout bugs with the header ad body
+ Modified 2/27/19 Chandler Gerstenslager Fixed resizing of header and header image
+ Modified 2/27/2019 Jason Clemens added css that was removed from other stylesheet, adjusted directions spacing
+ */
+/* Body themed to keep a consist look acrosss the app */
+body {
+  background-color: #eeeeee;
+  font-family: "Avenir Next", Helvetica, Sans-serif;
+  margin: 0px;
+  margin-top: 55px; }
+
+/* Force links to be consistent across the website */
+a {
+  color: #BB0000; }
+  a:focus, a:hover {
+    color: maroon; }
+
+/* Index page theming */
+.pagetitle {
+  text-align: center; }
+
+.desktop-header {
+  font-size: 25px; }
+
+.row {
+  margin: 20px;
+  height: auto;
+  display: flex; }
+
+.info p {
+  margin-left: 20px; }
+
+.appointments tr td {
+  padding-left: 20px; }
+
+.education li,
+.noteworthy li {
+  margin-bottom: 10px; }
+
+.directions h2 {
+  padding-top: 60px; }
+
+.column-img {
+  background-image: url(../images/jwdavis_Banner.jpg);
+  background-color: #cccccc;
+  height: 400px;
+  width: 400px;
+  margin: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block; }
+
+/* Fix the navbar to the top of the screen and make content slide below it */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background: #eeeeee;
+  z-index: 2;
+  font-family: sans-serif; }
+
+/* Change the ting of items when hovering*/
+.navbar a:hover .item {
+  background: #eee; }
+
+/*Style the header boxes. Width here is 100%/number of header links*/
+.navbar span {
+  margin: 0px;
+  background: #fff;
+  padding: 20px 0px;
+  float: left;
+  text-align: center;
+  font-size: 1em;
+  width: 20%;
+  border: #b00;
+  border-style: solid;
+  /* Handle the display shrinking */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-width: 0 0 2px 0; }
+
+/* Theme Jim's name box seperately */
+.navbar-name {
+  font-weight: bold;
+  font-size: 1em;
+  color: black;
+  background: red; }
+
+.directions p {
+  margin-left: 20px; }
+
+.directions div {
+  margin-left: 20px; }
+
+.student-name {
+  font-weight: bold; }
+
+.current-students {
+  width: 160px;
+  height: 170px; }
+
+.content {
+  padding: 40px;
+  overflow: scroll; }
+
+footer {
+  padding: 15px 0px 15px 0px;
+  width: 100vw;
+  background-color: #555;
+  z-index: 0;
+  color: #eee;
+  text-align: center;
+  font-family: sans-serif; }
+
+/* Common classes to force behavior of divs to be inline */
+.div-inline {
+  display: inline-block;
+  vertical-align: top; }
+
+.div-inline div {
+  display: inline-block;
+  vertical-align: top;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#B00), to(#A00));
+  background-image: linear-gradient(#B00, #A00);
+  margin: 10px;
+  padding-right: 25px;
+  border-style: solid;
+  border-color: #777;
+  border-width: 3px;
+  color: #FFF; }
+
+.div-inline h3 {
+  margin-left: 20px; }
+
+.mobile-header {
+  display: none; }
+
+.mobile-header-info {
+  display: none; }
+
+@media only screen and (max-width: 900px) {
+  .column-img {
+    width: 300px;
+    height: 300px; }
+  .p-bio {
+    margin-top: 10px;
+    margin-bottom: 10px; } }
+
+@media only screen and (max-width: 800px) {
+  .row {
+    display: block !important;
+    text-align: center; }
+  .column-img {
+    margin-left: auto;
+    margin-right: auto; }
+  .mobile-header {
+    display: block;
+    font-size: 24px;
+    font-weight: 600; }
+  .desktop-header {
+    display: none; }
+  .mobile-header-info {
+    font-weight: 300;
+    display: inline; } }
+
+@media only screen and (max-width: 550px) {
+  .center-student-content {
+    text-align: center; } }
